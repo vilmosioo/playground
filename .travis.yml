@@ -1,6 +1,0 @@
-language: node_js
-nodejs:
-- v12.13.1
-script:
-- npm run build
-- npm run test
