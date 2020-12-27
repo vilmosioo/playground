@@ -18,6 +18,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    - run: yarn cache dir
     - uses: actions/checkout@v2
     - name: Cache node modules
       uses: actions/cache@v2
