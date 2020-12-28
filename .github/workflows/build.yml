@@ -26,7 +26,9 @@ jobs:
     - name: Install dependencies
       run: yarn --frozen-lockfile
     - name: Build
-      run: yarn build --if-present
+      run: yarn build
+    - name: Checking that the source hasn't changed
+      run: git diff --exit-code
   test:
     runs-on: ubuntu-latest
     steps:
@@ -51,6 +53,8 @@ jobs:
       run: yarn --frozen-lockfile
     - name: Test
       run: yarn test
+    - name: Checking that the source hasn't changed
+      run: git diff --exit-code
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -75,3 +79,5 @@ jobs:
       run: yarn --frozen-lockfile
     - name: Lint
       run: yarn lint
+    - name: Checking that the source hasn't changed
+      run: git diff --exit-code
