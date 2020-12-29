@@ -10,15 +10,11 @@ jobs:
     - name: Cache node modules
       uses: actions/cache@v2
       env:
-        cache-name: cache-node-modules-v2
+        cache-name: cache-node-modules-v4
       with:
         # npm cache files are stored in `~/.npm` on Linux/macOS
         path: ~/.cache/yarn/v6
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -36,15 +32,11 @@ jobs:
     - name: Cache node modules
       uses: actions/cache@v2
       env:
-        cache-name: cache-node-modules-v2
+        cache-name: cache-node-modules-v4
       with:
         # npm cache files are stored in `~/.npm` on Linux/macOS
         path: ~/.cache/yarn/v6
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -62,15 +54,11 @@ jobs:
     - name: Cache node modules
       uses: actions/cache@v2
       env:
-        cache-name: cache-node-modules-v2
+        cache-name: cache-node-modules-v4
       with:
         # npm cache files are stored in `~/.npm` on Linux/macOS
         path: ~/.cache/yarn/v6
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
