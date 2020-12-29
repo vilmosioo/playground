@@ -13,7 +13,7 @@ function App (props: MeshProps) {
   return (
     <mesh ref={mesh} {...props}>
       <boxBufferGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial color='blue' />
+      <meshStandardMaterial color='red' />
     </mesh>
   )
 }
