@@ -25,6 +25,11 @@ jobs:
       run: yarn build
     - name: Checking that the source hasn't changed
       run: git diff --exit-code
+    - name: Save build
+      uses: actions/upload-artifact@v2
+      with:
+        name: playground
+        path: build
   test:
     runs-on: ubuntu-latest
     steps:
@@ -69,3 +74,12 @@ jobs:
       run: yarn lint
     - name: Checking that the source hasn't changed
       run: git diff --exit-code
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download build
+      uses: actions/download-artifact@v2
+      with:
+        name: playground
+    - name: LS
+      run: LS
