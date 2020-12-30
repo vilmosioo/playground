@@ -5,7 +5,7 @@ import * as Three from 'three'
 
 function App (props: MeshProps) {
   const mesh = React.useRef<Three.Mesh>()
-  const texture = new Three.TextureLoader().load('./stars.jpg')
+  const texture = new Three.TextureLoader().load('./stars2.png')
 
   return (
     <mesh ref={mesh} {...props}>
