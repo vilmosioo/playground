@@ -5,11 +5,12 @@ import * as Three from 'three'
 
 function App (props: MeshProps) {
   const mesh = React.useRef<Three.Mesh>()
+  const texture = new Three.TextureLoader().load('./stars2.png')
 
   return (
     <mesh ref={mesh} {...props}>
-      <boxBufferGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial color='red' />
+      <sphereGeometry args={[1, 100, 100]} />
+      <meshLambertMaterial map={texture} />
     </mesh>
   )
 }
