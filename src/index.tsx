@@ -8,7 +8,7 @@ import { CameraControls } from './CameraControls'
 
 ReactDOM.render(
   <React.StrictMode>
-  <Canvas camera={{ position: [0, 0, 0] }}>
+  <Canvas camera={{ position: [-0.1, 0, 0] }}>
     <CameraControls />
     <ambientLight />
     <pointLight position={[10, 10, 10]} />
