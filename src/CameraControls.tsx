@@ -19,5 +19,15 @@ export const CameraControls = () => {
   } = useThree()
   const controls = React.useRef<OrbitControls>()
   useFrame(_state => controls.current?.update())
-  return <orbitControls ref={controls} args={[camera, domElement]} />
+  return (
+    <orbitControls
+      ref={controls}
+      args={[camera, domElement]}
+      rotateSpeed={-1}
+      maxDistance={100}
+      zoomSpeed={10}
+      enableDamping={true}
+      dampingFactor={0.5}
+    />
+  )
 }
