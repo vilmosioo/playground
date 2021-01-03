@@ -1,17 +1,17 @@
 import * as React from 'react'
 import './App.css'
-import { MeshProps } from 'react-three-fiber'
-import * as Three from 'three'
+import { Canvas, MeshProps } from 'react-three-fiber'
+import { CameraControls } from './CameraControls'
+import Background from './Background'
 
 function App (props: MeshProps) {
-  const mesh = React.useRef<Three.Mesh>()
-  const texture = new Three.TextureLoader().load('./stars2.png')
-
   return (
-    <mesh ref={mesh} {...props}>
-      <sphereGeometry args={[100, 100, 100]} />
-      <meshLambertMaterial map={texture} side={Three.BackSide} />
-    </mesh>
+    <Canvas camera={{ position: [10, 0, 0] }}>
+      <CameraControls />
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <Background position={[0, 0, 0]} />
+    </Canvas>
   )
 }
 

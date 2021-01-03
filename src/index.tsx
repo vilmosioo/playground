@@ -3,17 +3,10 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { Canvas } from 'react-three-fiber'
-import { CameraControls } from './CameraControls'
 
 ReactDOM.render(
   <React.StrictMode>
-  <Canvas camera={{ position: [10, 0, 0] }}>
-    <CameraControls />
-    <ambientLight />
-    <pointLight position={[10, 10, 10]} />
-    <App position={[0, 0, 0]} />
-  </Canvas>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 )
