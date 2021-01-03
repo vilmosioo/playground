@@ -9,7 +9,7 @@ function App (props: MeshProps) {
 
   return (
     <mesh ref={mesh} {...props}>
-      <sphereGeometry args={[1, 100, 100]} />
+      <sphereGeometry args={[100, 100, 100]} />
       <meshLambertMaterial map={texture} side={Three.BackSide} />
     </mesh>
   )
